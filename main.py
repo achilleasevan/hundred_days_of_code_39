@@ -18,7 +18,7 @@ for iata in cities_with_iatacode:
     flights.append(fs.get_flights_and_prices(iata))
     
 for i in range(len(flights)):
-    if flights[i].price < sheet_data[i]["lowestPrice"]:
+    if flights[i] is not None and flights[i].price < sheet_data[i]["lowestPrice"]:
         nm.send_sms(flights[i].price, flights[i].origin_city, flights[i].origin_airport, flights[i].destination_city, flights[i].destination_airport, flights[i].out_date, flights[i].return_date)
 
 

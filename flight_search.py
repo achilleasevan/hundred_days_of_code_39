@@ -51,7 +51,7 @@ class FlightSearch:
         try:
             outbound_data = tequila_result['data'][0]
         except IndexError:
-            print(f"No outbound flights found for {iata_code}.")
+            print(f"No outbound direct flights found for {iata_code}.")
             return None
             
         outbound_flight_dict = {
@@ -80,7 +80,7 @@ class FlightSearch:
         try:
             inbound_data = tequila_result['data'][0]
         except IndexError:
-            print(f"No inbound flights found from {iata_code}.")
+            print(f"No inbound direct flights found from {iata_code}.")
             return None
 
         inbound_flight_dict = {
